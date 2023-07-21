@@ -1,15 +1,15 @@
-import { Badge } from "./Badge"
-import { Button } from "./Button"
-import { Link } from "./Link"
-import { Tag } from "./Tag"
-import { Modal } from "./Modal"
-import { Checkbox } from "./Checkbox"
-import { Progress } from "./Progress"
-import { Tabs } from "./Tabs"
-import { Radio } from "./Radio"
-import { Select } from "./Select"
-import { Switch } from "./Switch"
-import { Input } from "./Input"
+// import { Badge } from "./Badge"
+// import { Button } from "./Button"
+// import { Link } from "./Link"
+// import { Tag } from "./Tag"
+// import { Modal } from "./Modal"
+// import { Checkbox } from "./Checkbox"
+// import { Progress } from "./Progress"
+// import { Tabs } from "./Tabs"
+// import { Radio } from "./Radio"
+// import { Select } from "./Select"
+// import { Switch } from "./Switch"
+// import { Input } from "./Input"
 import {
   accordionDefaultTheme,
   avatarDefaultTheme,
@@ -29,10 +29,10 @@ import {
 export default {
   Accordion: accordionDefaultTheme,
   Avatar: avatarDefaultTheme,
-  Badge,
+  // Badge,
   Breadcrumb: breadcrumbDefaultTheme,
-  Button,
-  Checkbox,
+  // Button,
+  // Checkbox,
   CloseButton: closeButtonDefaultTheme,
   Code: codeDefaultTheme,
   Divider: dividerDefaultTheme,
@@ -40,16 +40,16 @@ export default {
   Form: formDefaultTheme,
   FormLabel: formLabelDefaultTheme,
   Heading: headingDefaultTheme,
-  Input,
-  Link,
+  // Input,
+  // Link,
   Menu: menuDefaultTheme,
-  Modal,
-  Progress,
-  Radio,
-  Select,
+  // Modal,
+  // Progress,
+  // Radio,
+  // Select,
   Spinner: spinnerDefaultTheme,
-  Switch,
+  // Switch,
   Table: tableDefaultTheme,
-  Tabs,
-  Tag,
+  // Tabs,
+  // Tag,
 }
