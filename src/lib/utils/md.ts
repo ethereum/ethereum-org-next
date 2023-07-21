@@ -6,9 +6,12 @@ import { CONTENT_DIR } from "../constants"
 
 const contentDir = join(process.cwd(), CONTENT_DIR)
 
-export const getPostSlugs = () => {
+const getPostSlugs = () => {
   return fs.readdirSync(contentDir)
 }
+
+// Removes {#...} from .md file so content can be parsed properly
+const removeAnchorLinks = (mdContent: string) => mdContent.replace(/{#.*?}/g, "").trim()
 
 export const getContentBySlug = (slug: string, fields: string[] = []) => {
   const realSlug = slug.replace(/\.md$/, "")
@@ -27,8 +30,9 @@ export const getContentBySlug = (slug: string, fields: string[] = []) => {
     if (field === "slug") {
       items[field] = realSlug
     }
+
     if (field === "content") {
-      items[field] = content
+      items[field] = removeAnchorLinks(content)
     }
 
     if (typeof frontmatter[field] !== "undefined") {
