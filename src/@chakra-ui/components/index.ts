@@ -26,6 +26,7 @@ import {
   tableDefaultTheme,
 } from "./components.utils"
 
+// TODO: update imports and exports after components being migrated
 export default {
   Accordion: accordionDefaultTheme,
   Avatar: avatarDefaultTheme,
