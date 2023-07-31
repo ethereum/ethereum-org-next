@@ -14,7 +14,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next/types"
 import { ChildOnlyProp } from "@/lib/types"
 
 interface Params extends ParsedUrlQuery {
-  slug: string
+  slug: string[]
 }
 
 interface Props {
@@ -28,7 +28,8 @@ export const getStaticPaths: GetStaticPaths = () => {
     paths: contentFiles.map((file) => {
       return {
         params: {
-          slug: file.slug,
+          // Splitting nested paths to generate proper slug
+          slug: file.slug.split("/").slice(1),
         },
       }
     }),
@@ -38,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
   const params = context.params!
-  const markdown = getContentBySlug(params.slug, ["slug", "content"])
+  const markdown = getContentBySlug(params.slug.join("/"), ["slug", "content"])
   // TODO: check if content type can be fixed
   const content = (await serialize(markdown.content, {
     mdxOptions: {
