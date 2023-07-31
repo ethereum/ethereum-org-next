@@ -70,7 +70,6 @@ export const getContentBySlug = (slug: string, fields: string[] = []) => {
 
 export const getContent = (fields: string[] = []) => {
   const slugs = getPostSlugs(CONTENT_DIR)
-  console.log({ slugs })
   const content = slugs.map((slug) => getContentBySlug(slug as string, fields))
 
   return content
