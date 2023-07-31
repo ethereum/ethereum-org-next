@@ -1,5 +1,5 @@
 import { cssVar, SystemStyleObject, theme } from "@chakra-ui/react"
-import { merge } from "lodash"
+import { merge } from "lodash.merge"
 
 const {
   Accordion: accordionDefaultTheme,
@@ -67,7 +67,7 @@ export {
 export function defineMergeStyles(
   defaultTheming?: SystemStyleObject | unknown,
   ...styleObjs: SystemStyleObject[] | unknown[]
-): Record<string, SystemStyleObject> {
+): any {
   return merge(defaultTheming, ...styleObjs)
 }
 
